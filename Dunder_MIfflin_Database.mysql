@@ -1,4 +1,3 @@
-
 DROP TABLE student;
 CREATE TABLE student (
     student_id INT PRIMARY KEY,
@@ -312,6 +311,37 @@ GROUP BY client_id;
 SELECT *
 FROM branch_supplier
 WHERE supplier_name LIKE '%Label%';
+
+--FIND ALL EMPLOYEES BORN IN OCTOBER
+SELECT *
+FROM employee
+WHERE birth_day LIKE '%____-10%';
+
+
+--fixed a mistake in supplier name
+UPDATE branch_supplier
+SET supplier_name = 'Stamford Labels'
+WHERE branch_id = 3 AND supplier_name = 'Stamford Lables';
+
+--FIND ALL EMPLOYEES BORN IN OCTOBER
+SELECT *
+FROM employee
+WHERE birth_day LIKE '%____-02%';
+
+--FIND ALL CLIENTS THAT ARE SCHOOLS
+SELECT *
+FROM client
+WHERE client_name LIKE '%school%';
+
+--UNIONS
+
+
+--FIND A LIST OF EMPLOYEE AND BRANCH NAMES
+SELECT first_name
+FROM employee
+UNION
+SELECT branch_name
+FROM branch;
 
 
 
